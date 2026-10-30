@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel Site Africa | Discover Africa’s Superb Destinations</title>
+<meta name="description" content="Visa assistance, flights, accommodation, airport transfers and curated excursions across Africa. Based in Nairobi.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦋</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12271f; --ink2:#1c3a2f; --paper:#fbfaf7; --sand:#efece4; --line:#d9d4c6;
+  --saffron:#f0a23a; --magenta:#a2297a; --lime:#a8c13e; --text:#23302a; --muted:#5d6a63;
+  --r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--text);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3,h4{font-family:'Bricolage Grotesque','DM Sans',system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em;color:var(--ink)}
+a{color:inherit}
+img,svg{max-width:100%}
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.weave{height:10px;background:repeating-linear-gradient(90deg,var(--saffron) 0 28px,var(--ink) 28px 40px,var(--magenta) 40px 56px,var(--lime) 56px 76px,var(--ink) 76px 88px)}
+
+/* header */
+.topbar{background:var(--ink);color:#d8e2dc;font-size:14px}
+.topbar .wrap{display:flex;gap:22px;flex-wrap:wrap;padding:8px 0;justify-content:space-between}
+.topbar a{text-decoration:none}.topbar a:hover{color:var(--saffron)}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;color:var(--magenta);letter-spacing:-.03em;line-height:1}
+.brand small{display:block;font-size:11px;letter-spacing:.35em;color:var(--lime);font-weight:700;margin-top:2px}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:16px}
+nav a:hover{color:var(--magenta)}
+.btn{display:inline-block;background:var(--saffron);color:var(--ink);font-weight:700;padding:14px 26px;border-radius:var(--r);text-decoration:none;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s;cursor:pointer;font:700 16px 'DM Sans',sans-serif}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--paper)}
+.btn.sm{padding:9px 16px;font-size:15px;box-shadow:3px 3px 0 var(--ink)}
+.menu{display:none;background:none;border:2px solid var(--ink);border-radius:var(--r);padding:8px 12px;font-weight:700;cursor:pointer}
+
+/* hero */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding:84px 0 96px;position:relative;z-index:1}
+.hero h1{color:#fff;font-size:clamp(42px,6.4vw,84px);font-weight:800}
+.hero p.lead{font-size:20px;color:#cddad3;margin:24px 0 34px;max-width:52ch}
+.hero .sun{position:absolute;right:-140px;top:-140px;width:520px;height:520px;border-radius:50%;background:var(--saffron);opacity:.95}
+.hero .sun::after{content:"";position:absolute;inset:60px;border-radius:50%;border:2px solid var(--ink)}
+.stack{display:grid;gap:14px;position:relative}
+.stack a{display:flex;justify-content:space-between;align-items:center;background:var(--paper);color:var(--ink);padding:18px 22px;border-radius:var(--r);text-decoration:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:21px;border-left:10px solid var(--c);transition:transform .2s}
+.stack a:hover{transform:translateX(-8px)}
+.stack a span{font:500 14px 'DM Sans',sans-serif;color:var(--muted)}
+.hero.sub .wrap{grid-template-columns:1fr;padding:70px 0 80px}
+.hero.sub p.lead{max-width:60ch}
+.crumbs{font-size:14px;color:#a9bdb2;margin-bottom:18px}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--saffron)}
+
+/* sections */
+section{padding:84px 0}
+.intro{display:grid;grid-template-columns:1fr 1.2fr;gap:60px}
+.intro h2{font-size:clamp(32px,4vw,52px)}
+.intro p+p{margin-top:14px}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:40px;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(32px,4vw,52px)}
+.sec-h p{max-width:46ch;color:var(--muted)}
+.services{background:var(--sand)}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink)}
+.svc div{padding:26px 26px 30px 0;border-bottom:1px solid var(--line)}
+.svc h3{font-size:22px;margin-bottom:6px}
+.svc p{color:var(--muted);font-size:16px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.card{background:#fff;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-4px);box-shadow:6px 6px 0 var(--ink)}
+.card .art{height:150px;position:relative;background:var(--c);overflow:hidden}
+.card .art svg{position:absolute;inset:0;width:100%;height:100%}
+.card .art b{position:absolute;left:16px;bottom:8px;font:800 64px/1 'Bricolage Grotesque',sans-serif;color:rgba(255,255,255,.92);letter-spacing:-.04em}
+.card .body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{font-size:24px}
+.card p{font-size:15.5px;color:var(--muted);flex:1}
+.card .go{font-weight:700;color:var(--magenta);font-size:15px}
+.card.soon .go{color:var(--muted)}
+
+.about-sa{background:var(--ink);color:#d3dfd8}
+.about-sa h2{color:#fff}
+.about-sa .cols{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:30px}
+.about-sa .cols p{font-size:18px}
+
+.hl{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 24px}
+.hl li{list-style:none;background:var(--sand);border:1px solid var(--line);padding:7px 14px;border-radius:99px;font-size:15px}
+.detail{display:grid;grid-template-columns:1.3fr .7fr;gap:60px}
+.detail h2{font-size:clamp(30px,3.6vw,46px);margin-bottom:14px}
+.box{border:2px solid var(--ink);border-radius:var(--r);padding:26px;background:#fff;align-self:start;box-shadow:6px 6px 0 var(--saffron)}
+.box h3{font-size:22px;margin-bottom:10px}
+.box p{margin-bottom:16px;color:var(--muted);font-size:16px}
+
+.itin{background:var(--sand)}
+.itin-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.itin-item{border:2px dashed var(--ink);border-radius:var(--r);padding:26px;background:var(--paper)}
+.itin-item h3{font-size:22px;margin-bottom:6px}
+.itin-item p{color:var(--muted);font-size:16px;margin-bottom:14px}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact h2{font-size:clamp(32px,4vw,52px);margin-bottom:16px}
+.contact address{font-style:normal;display:grid;gap:10px;margin-top:22px}
+.contact address a{text-decoration:none;font-weight:500}.contact address a:hover{color:var(--magenta)}
+form{display:grid;gap:14px}
+label{font-weight:700;font-size:15px;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:2px solid var(--ink);border-radius:var(--r);background:#fff;color:var(--text);width:100%}
+textarea{min-height:110px;resize:vertical}
+.ok{display:none;background:var(--lime);border:2px solid var(--ink);padding:14px;border-radius:var(--r);font-weight:700}
+
+footer{background:var(--ink);color:#b9c9c0;padding:50px 0 28px;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer h4{color:#fff;font-size:18px;margin-bottom:10px}
+footer a{display:block;text-decoration:none;margin-bottom:6px}footer a:hover{color:var(--saffron)}
+.fine{width:100%;border-top:1px solid #2c4a3e;padding-top:18px;margin-top:10px;font-size:14px}
+.wa{position:fixed;right:18px;bottom:18px;z-index:60}
+
+.view{display:none}.view.on{display:block}
+.intro-anim{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+@media (max-width:900px){
+  .hero .wrap,.intro,.about-sa .cols,.detail,.contact{grid-template-columns:1fr;gap:34px}
+  .hero .wrap{padding:56px 0 64px}.hero .sun{width:320px;height:320px;right:-120px;top:-120px}
+  .svc{grid-template-columns:1fr}
+  section{padding:60px 0}
+  .menu{display:block}
+  nav ul{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px 4%;gap:16px;border-bottom:2px solid var(--ink)}
+  nav ul.open{display:flex}
+  .topbar .wrap{justify-content:flex-start;gap:6px 18px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span><a href="tel:+254720069868">+254 720 069 868</a> &nbsp; <a href="tel:+254707800490">+254 707 800 490</a></span>
+  <span><a href="mailto:bookings@travelsiteafrica.com">bookings@travelsiteafrica.com</a></span>
+  <span>Nairobi, Kamiti Road, Kikao Pop-up Mart, 1st floor, shop 5</span>
+</div></div>
+
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#/" aria-label="Travel Site Africa home">
+    <svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6c9 0 15 5 18 12 3 6 1 10-2 14-3 5-6 9-8 14-2 5-3 10-8 12-4-3-5-8-8-13-2-5-5-8-9-12-4-5-3-12 2-17 3-6 9-10 15-10z" fill="#f0a23a"/><path d="M14 20c6-6 14-6 18 2-1 8-8 8-14 4z" fill="#a2297a"/><path d="M50 18c-6-5-13-4-18 4 2 7 9 7 15 2z" fill="#a8c13e"/></svg>
+    <span><b>Travel Site</b><small>AFRICA</small></span>
+  </a>
+  <button class="menu" aria-expanded="false" aria-controls="mainnav">Menu</button>
+  <nav aria-label="Main"><ul id="mainnav">
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/destinations">Destinations</a></li>
+    <li><a href="#/south-africa">South Africa</a></li>
+    <li><a href="#/kenya">Kenya</a></li>
+    <li><a href="#/tanzania">Tanzania</a></li>
+    <li><a class="btn sm" href="#contact" data-contact>Plan my trip</a></li>
+  </ul></nav>
+</div></header>
+<div class="weave"></div>
+
+<main id="app"></main>
+
+<section class="contact-sec" id="contact-sec" style="border-top:1px solid var(--line)">
+ <div class="wrap contact" id="contact">
+  <div>
+    <h2>Tell us where you want to go</h2>
+    <p>Share your dates and destination. We will reply with visa guidance, flight options, stays, transfers and excursions that fit your plans.</p>
+    <address>
+      <a href="tel:+254720069868">+254 720 069 868</a>
+      <a href="tel:+254707800490">+254 707 800 490</a>
+      <a href="mailto:visas@travelsiteafrica.com">visas@travelsiteafrica.com</a>
+      <a href="mailto:tina@travelsiteafrica.com">tina@travelsiteafrica.com</a>
+      <a href="mailto:bookings@travelsiteafrica.com">bookings@travelsiteafrica.com</a>
+      <span>Nairobi, Kamiti Road, Kikao Pop-up Mart, 1st floor, shop 5</span>
+    </address>
+  </div>
+  <form id="enq" novalidate>
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Phone<input name="phone" type="tel" autocomplete="tel"></label>
+    <label>Destination<select name="dest" id="destSel"></select></label>
+    <label>What do you need?<select name="need">
+      <option>Complete trip</option><option>Visa assistance</option><option>Flight tickets</option><option>Accommodation</option><option>Airport transfers</option><option>Excursions</option>
+    </select></label>
+    <label>Message<textarea name="msg" placeholder="Travel dates, number of travellers, anything else"></textarea></label>
+    <button class="btn" type="submit">Send enquiry</button>
+    <div class="ok" id="ok" role="status">Your email app has opened with your enquiry. Press send to complete it.</div>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap">
+  <div><h4>Travel Site Africa</h4><p>Visas, flights, stays, transfers<br>and excursions across Africa.</p></div>
+  <div><h4>Explore</h4><a href="#/destinations">All destinations</a><a href="#/south-africa">South Africa</a><a href="#/kenya">Kenya</a><a href="#/tanzania">Tanzania</a></div>
+  <div><h4>Contact</h4><a href="tel:+254720069868">+254 720 069 868</a><a href="tel:+254707800490">+254 707 800 490</a><a href="mailto:bookings@travelsiteafrica.com">bookings@travelsiteafrica.com</a></div>
+  <div class="fine">© <span id="yr"></span> Travel Site Africa. Nairobi, Kenya.</div>
+</div></footer>
+
+<script>
+const COUNTRIES=[
+ {s:'south-africa',n:'South Africa',c:'#c2612f',d:'Discover incredible diversity, from vibrant cities and scenic coastlines to unforgettable wildlife experiences.'},
+ {s:'morocco',n:'Morocco',c:'#a2297a',d:'Wander through colorful souks, ancient cities, sweeping deserts, and the magic of North African culture.'},
+ {s:'mauritius',n:'Mauritius',c:'#1a8a8a',d:'Escape to turquoise waters, tropical beaches, lush landscapes, and unforgettable island experiences.'},
+ {s:'egypt',n:'Egypt',c:'#b88a1e',d:'Step into ancient history, explore iconic landmarks, and enjoy unforgettable experiences along the Nile and Red Sea.'},
+ {s:'kenya',n:'Kenya',c:'#2f7d3e',d:'Explore breathtaking landscapes, from sun-kissed beaches and vast savannahs to unforgettable safari adventures.'},
+ {s:'tanzania',n:'Tanzania',c:'#2a6fa8',d:'Experience the wonders of Africa, from the Serengeti and Kilimanjaro to the tropical shores of Zanzibar.'},
+ {s:'rwanda',n:'Rwanda',c:'#6b8f2a',d:'Experience the beauty of the Land of a Thousand Hills, from mountain landscapes to remarkable wildlife encounters.'},
+ {s:'namibia',n:'Namibia',c:'#c4472e',d:'Journey through dramatic deserts, striking landscapes, and vast wilderness where adventure awaits.'},
+ {s:'seychelles',n:'Seychelles',c:'#2191b8',d:'Discover pristine beaches, crystal-clear waters, and breathtaking tropical islands made for unforgettable escapes.'},
+ {s:'ghana',n:'Ghana',c:'#d08a12',d:'Experience vibrant culture, welcoming communities, rich history, and beautiful coastal landscapes.'}
+];
+const DEST={
+ 'south-africa':{hero:'Where extraordinary wildlife, spectacular landscapes, vibrant cities and unforgettable experiences come together.',cta:'Explore South Africa',
+  about:['South Africa is a destination of extraordinary contrasts, where golden savannahs meet dramatic mountains, pristine beaches stretch along the coast, and vibrant cities sit alongside some of the world’s most remarkable wilderness. From the energy of Cape Town and the Western Cape to unforgettable wildlife encounters on safari, every journey offers a different way to experience the country.','Explore world-class wine regions, indulge in exceptional food and wine, relax on beautiful beaches, or venture into the mountains for an unforgettable adventure. Discover the richness of South Africa’s cultures, traditions, and people, or experience the country in complete comfort with a selection of luxury lodges, private tours, and exclusive escapes.'],
+  top:'Top 10 Tourist Destinations in South Africa',
+  places:[
+   {s:'cape-town',n:'Cape Town',d:'A cosmopolitan city surrounded by dramatic mountains, beautiful coastline, world-class dining and some of South Africa’s most iconic attractions.',h:['Table Mountain','Cape Peninsula','Cape Point','Boulders Beach','V&A Waterfront','Bo-Kaap','Robben Island','Winelands']},
+   {s:'cape-winelands',n:'Cape Winelands',d:'Historic estates, mountain valleys and exceptional food and wine within easy reach of Cape Town.',h:['Stellenbosch','Franschhoek','Paarl','Wine tasting','Cellar dining']},
+   {s:'garden-route',n:'Garden Route',d:'A scenic coastal drive of lagoons, forests, beaches and charming towns.',h:['Knysna','Plettenberg Bay','Tsitsikamma','Wilderness','Oudtshoorn']},
+   {s:'kruger-national-park',n:'Kruger National Park',d:'One of Africa’s great safari destinations, home to the Big Five and vast open bushveld.',h:['Big Five game drives','Private reserves','Luxury lodges','Bush walks']},
+   {s:'johannesburg',n:'Johannesburg',d:'South Africa’s energetic hub of culture, history, food and nightlife.',h:['Apartheid Museum','Soweto','Maboneng','Gold Reef City']},
+   {s:'durban',n:'Durban',d:'A warm, sunny coastal city with golden beaches, vibrant markets and a rich blend of cultures.',h:['Golden Mile','uShaka Marine World','Moses Mabhida Stadium','Indian Quarter']},
+   {s:'kwazulu-natal',n:'KwaZulu-Natal',d:'Zulu heritage, subtropical coastline and some of the country’s finest game reserves.',h:['Hluhluwe-iMfolozi','iSimangaliso Wetland Park','Zulu culture','Battlefields']},
+   {s:'drakensberg',n:'Drakensberg',d:'Sweeping basalt peaks, hiking trails and ancient rock art in a dramatic mountain world.',h:['Royal Natal National Park','Cathedral Peak','San rock art','Hiking']},
+   {s:'sun-city',n:'Sun City',d:'A resort escape with golf, entertainment and the neighbouring Pilanesberg game reserve.',h:['Pilanesberg safari','Valley of Waves','Golf','Entertainment']},
+   {s:'gqeberha',n:'Gqeberha and Eastern Cape',d:'Beaches, malaria-free safari reserves and a laid-back coastal pace.',h:['Addo Elephant Park','Shamwari','Jeffreys Bay','Wild Coast']}
+  ]},
+ 'kenya':{hero:'From the Maasai Mara migration to the white sands of Diani, Kenya is safari at its source.',cta:'Explore Kenya',
+  about:['Kenya brings together vast savannahs, snow-capped peaks, Rift Valley lakes and a warm Indian Ocean coast. It is the home of the classic safari and the Great Migration.','Our Nairobi team lives here. We plan the stays, transfers and game drives with first-hand knowledge, whether you want a short city stopover, a luxury camp or a beach finish.'],
+  top:'Top Destinations in Kenya',
+  places:[
+   {s:'nairobi',n:'Nairobi',d:'The capital: wildlife on the city’s doorstep, great food and the gateway to every safari.',h:['Nairobi National Park','Giraffe Centre','Karen Blixen Museum','David Sheldrick Trust']},
+   {s:'maasai-mara',n:'Maasai Mara',d:'Kenya’s most famous reserve, with big cats year-round and the Great Migration from July to October.',h:['Game drives','Great Migration','Maasai village visits','Balloon safari']},
+   {s:'amboseli',n:'Amboseli',d:'Herds of elephants framed by Mount Kilimanjaro.',h:['Elephant herds','Kilimanjaro views','Observation Hill']},
+   {s:'diani',n:'Diani',d:'Powder-white sand, palms and warm turquoise water on Kenya’s south coast.',h:['Diani Beach','Snorkelling','Kitesurfing','Shimba Hills']}
+  ]},
+ 'tanzania':{hero:'The Serengeti, Kilimanjaro and Zanzibar: three of Africa’s great experiences in one country.',cta:'Explore Tanzania',
+  about:['Tanzania offers endless plains, a volcanic crater teeming with wildlife, Africa’s highest peak and the spice islands of Zanzibar.','Combine a northern circuit safari with a beach finish, and let us handle visas, flights, stays and transfers along the way.'],
+  top:'Top Destinations in Tanzania',
+  places:[
+   {s:'serengeti',n:'Serengeti',d:'Endless plains and the world’s largest land migration.',h:['Great Migration','Big cat sightings','Hot-air balloons']},
+   {s:'ngorongoro',n:'Ngorongoro',d:'A vast volcanic caldera with dense wildlife in a single day’s game drive.',h:['Crater floor safari','Black rhino','Maasai culture']},
+   {s:'zanzibar',n:'Zanzibar',d:'Spice farms, Stone Town’s old streets and beaches fringed with coral reef.',h:['Stone Town','Nungwi and Kendwa','Spice tours','Dhow cruises']}
+  ]}
+};
+const $=s=>document.querySelector(s), app=$('#app');
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const pattern=i=>{const p=[
+ '<circle cx="150" cy="40" r="60" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/><circle cx="150" cy="40" r="36" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/>',
+ '<path d="M0 120 L60 60 L120 120 L180 60 L240 120 L300 60" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2"/><path d="M0 150 L60 90 L120 150 L180 90 L240 150 L300 90" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="2"/>',
+ '<path d="M0 90 Q40 60 80 90 T160 90 T240 90 T320 90" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="2"/><path d="M0 115 Q40 85 80 115 T160 115 T240 115 T320 115" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="2"/>',
+ '<g fill="#fff" fill-opacity=".25"><rect x="170" y="20" width="26" height="26"/><rect x="204" y="54" width="26" height="26"/><rect x="170" y="88" width="26" height="26"/><rect x="238" y="20" width="26" height="26"/></g>'];
+ return '<svg viewBox="0 0 300 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true">'+p[i%4]+'</svg>'};
+const cardC=(c,i,href,name,desc,go,soon)=>`<a class="card${soon?' soon':''}" href="${href}"><div class="art" style="--c:${c}">${pattern(i)}<b>${esc(name[0])}</b></div><div class="body"><h3>${esc(name)}</h3><p>${esc(desc)}</p><span class="go">${go}</span></div></a>`;
+const countryCards=()=>COUNTRIES.map((c,i)=>cardC(c.c,i,'#/'+c.s,c.n,c.d,'Explore Destination',!DEST[c.s])).join('');
+const ITIN=name=>`<section class="itin"><div class="wrap"><div class="sec-h"><h2>Available itineraries</h2><p>Ready-made routes for ${esc(name)}. Every one can be adjusted to your dates, budget and pace.</p></div><div class="itin-list">
+ <div class="itin-item"><h3>Short escape</h3><p>3 to 5 days built around one highlight, with transfers and stay included.</p><a class="btn sm alt" href="#contact" data-contact="${esc(name)}">Request this itinerary</a></div>
+ <div class="itin-item"><h3>Classic journey</h3><p>7 to 10 days combining the best-known sights with time to relax.</p><a class="btn sm alt" href="#contact" data-contact="${esc(name)}">Request this itinerary</a></div>
+ <div class="itin-item"><h3>Tailor-made</h3><p>Tell us what you love and we will design a trip around it.</p><a class="btn sm alt" href="#contact" data-contact="${esc(name)}">Request this itinerary</a></div></div></div></section>`;
+const SERVICES=`<section class="services"><div class="wrap"><div class="sec-h"><h2>Everything in one place</h2><p>Take the stress out of coordinating the details and focus on enjoying the journey.</p></div><div class="svc">
+ <div><h3>Visa assistance</h3><p>Practical guidance and support with applications.</p></div>
+ <div><h3>Flight ticketing</h3><p>Routes and fares that suit your schedule.</p></div>
+ <div><h3>Accommodation</h3><p>Hotels, lodges and camps reserved for you.</p></div>
+ <div><h3>Airport transfers</h3><p>Met on arrival and taken straight to your stay.</p></div>
+ <div><h3>Excursions</h3><p>Carefully selected tours and experiences.</p></div>
+ <div><h3>Local expertise</h3><p>A Nairobi team that plans end to end.</p></div></div></div></section>`;
+
+function home(){return `
+<div class="hero"><div class="sun" aria-hidden="true"></div><div class="wrap">
+ <div class="intro-anim"><h1>Discover Africa’s Superb Destinations</h1>
+ <p class="lead">Explore breathtaking landscapes, extraordinary wildlife, vibrant cultures, and unforgettable journeys across Africa.</p>
+ <a class="btn" href="#/destinations">Explore African Destinations</a></div>
+ <div class="stack" aria-label="Featured countries">
+  ${['south-africa','kenya','tanzania','morocco'].map(s=>{const c=COUNTRIES.find(x=>x.s===s);return `<a href="#/${s}" style="--c:${c.c}">${c.n}<span>Explore</span></a>`}).join('')}
+ </div></div></div><div class="weave"></div>
+<section><div class="wrap intro"><h2>Your Journey Across Africa, Made Simple</h2><div>
+ <p>From the moment you start planning to the moment you arrive, we’re here to make your African adventure seamless. Whether you’re travelling for leisure, business, or a special experience, our team provides practical visa assistance and advice, flight ticketing, accommodation reservations, airport transfers, and carefully selected excursions, all tailored to your travel needs.</p>
+ <h3 style="margin:26px 0 8px;font-size:24px">Why Travel With Us?</h3>
+ <p>Take the stress out of coordinating the details and focus on enjoying the journey. With our local expertise and end-to-end travel support, you can confidently explore your chosen African destination knowing that the important pieces are taken care of.</p></div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="sec-h"><h2>Top Holiday Destinations in Africa</h2><p>Choose a country to see its destinations and available itineraries.</p></div><div class="grid">${countryCards()}</div></div></section>
+${SERVICES}`}
+
+function destinations(){return `
+<div class="hero sub"><div class="wrap"><div class="crumbs"><a href="#/">Home</a> / African Tourism</div><h1>African Destinations</h1><p class="lead">Ten countries, one team. Pick a destination to see where to go and how we can get you there.</p></div></div><div class="weave"></div>
+<section><div class="wrap"><div class="grid">${countryCards()}</div></div></section>`}
+
+function country(slug){
+ const meta=COUNTRIES.find(c=>c.s===slug), D=DEST[slug];
+ if(!D){return `<div class="hero sub"><div class="wrap"><div class="crumbs"><a href="#/">Home</a> / <a href="#/destinations">Destinations</a> / ${meta.n}</div><h1>${meta.n} Travel</h1><p class="lead">${esc(meta.d)}</p><a class="btn" href="#contact" data-contact="${meta.n}">Enquire about ${meta.n}</a></div></div><div class="weave"></div>
+ <section><div class="wrap intro"><h2>Our ${meta.n} guide is on its way</h2><div><p>We are preparing the full ${meta.n} page with destinations and itineraries. In the meantime, our team can already arrange visas, flights, stays, transfers and excursions for you.</p><p style="margin-top:20px"><a class="btn alt" href="#/destinations">Browse other countries</a></p></div></div></section>${ITIN(meta.n)}`}
+ return `<div class="hero sub"><div class="wrap"><div class="crumbs"><a href="#/">Home</a> / <a href="#/destinations">Destinations</a> / ${meta.n}</div><h1>${meta.n} Travel</h1><p class="lead">${esc(D.hero)}</p><a class="btn" href="#places">${D.cta}</a></div></div><div class="weave"></div>
+ <section class="about-sa"><div class="wrap"><h2>About ${meta.n}</h2><div class="cols">${D.about.map(p=>`<p>${esc(p)}</p>`).join('')}</div></div></section>
+ <section id="places"><div class="wrap"><div class="sec-h"><h2>${esc(D.top)}</h2><p>Open a destination for highlights, then ask us to build it into your trip.</p></div><div class="grid">${D.places.map((p,i)=>cardC(meta.c,i,'#/'+slug+'/'+p.s,p.n,p.d,'Explore '+p.n)).join('')}</div></div></section>
+ ${ITIN(meta.n)}`}
+
+function place(slug,ps){
+ const meta=COUNTRIES.find(c=>c.s===slug), D=DEST[slug], p=D&&D.places.find(x=>x.s===ps);
+ if(!p) return country(slug);
+ return `<div class="hero sub"><div class="wrap"><div class="crumbs"><a href="#/">Home</a> / <a href="#/${slug}">${meta.n}</a> / ${p.n}</div><h1>${p.n}</h1><p class="lead">${esc(p.d)}</p><a class="btn" href="#contact" data-contact="${esc(p.n)}, ${meta.n}">Explore ${p.n}</a></div></div><div class="weave"></div>
+ <section><div class="wrap detail"><div><h2>The experience</h2><p>${esc(p.d)}</p><h3 style="margin-top:28px;font-size:22px">Highlights</h3><ul class="hl">${p.h.map(h=>`<li>${esc(h)}</li>`).join('')}</ul>
+ <a class="btn alt" href="#/${slug}">More of ${meta.n}</a></div>
+ <aside class="box"><h3>Plan ${esc(p.n)}</h3><p>We arrange visa guidance, flights, accommodation, airport transfers and excursions for ${esc(p.n)}.</p><a class="btn" href="#contact" data-contact="${esc(p.n)}, ${meta.n}">Request a quote</a></aside></div></section>${ITIN(p.n)}`}
+
+function route(){
+ const parts=location.hash.replace(/^#\/?/,'').split('/').filter(Boolean);
+ if(parts[0]==='contact'||!location.hash.startsWith('#/')&&location.hash){return}
+ let h;
+ if(!parts.length) h=home();
+ else if(parts[0]==='destinations') h=destinations();
+ else if(COUNTRIES.some(c=>c.s===parts[0])) h=parts[1]?place(parts[0],parts[1]):country(parts[0]);
+ else h=home();
+ app.innerHTML=h; window.scrollTo(0,0);
+ const t=parts.length?(COUNTRIES.find(c=>c.s===parts[0])||{n:'Destinations'}).n:'Discover Africa’s Superb Destinations';
+ document.title=t+' | Travel Site Africa';
+ $('#mainnav').classList.remove('open');
+}
+window.addEventListener('hashchange',route);
+if(!location.hash||location.hash==='#contact')history.replaceState(null,'','#/');
+route();
+
+/* contact */
+const sel=$('#destSel');
+sel.innerHTML='<option>Not sure yet</option>'+COUNTRIES.map(c=>`<option>${c.n}</option>`).join('');
+document.addEventListener('click',e=>{
+ const a=e.target.closest('[data-contact]'); if(!a)return;
+ e.preventDefault();
+ const v=a.getAttribute('data-contact');
+ if(v){const base=v.split(',').pop().trim();const o=[...sel.options].find(x=>x.text===base);if(o)sel.value=o.text; $('#enq textarea').value=(v.includes(',')||!o?'Interested in: '+v+'\n':'')+$('#enq textarea').value}
+ $('#contact').scrollIntoView({behavior:'smooth'});
+ setTimeout(()=>$('#enq input').focus({preventScroll:true}),500);
+ $('#mainnav').classList.remove('open');
+});
+$('#enq').addEventListener('submit',e=>{
+ e.preventDefault();
+ const f=e.target,d=Object.fromEntries(new FormData(f));
+ if(!d.name.trim()||!/^\S+@\S+\.\S+$/.test(d.email)){alert('Please enter your name and a valid email address.');return}
+ const body=`Name: ${d.name}\nEmail: ${d.email}\nPhone: ${d.phone}\nDestination: ${d.dest}\nNeed: ${d.need}\n\n${d.msg}`;
+ location.href='mailto:bookings@travelsiteafrica.com?subject='+encodeURIComponent('Trip enquiry: '+d.dest)+'&body='+encodeURIComponent(body);
+ $('#ok').style.display='block';
+});
+/* menu */
+const mb=document.querySelector('.menu');
+mb.addEventListener('click',()=>{const o=$('#mainnav').classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+$('#yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
